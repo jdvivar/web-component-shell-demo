@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web component lazy load demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="module">
+      import { LitElement, html, css } from 'https://unpkg.com/lit-element/lit-element.js?module'
+
+      window.setTimeout(() => window.customElements.define('simple-wc', class extends LitElement {
+        constructor() {
+          super()
+          this.style.display = 'inherit'
+        }
+        
+        static get styles() {
+          return css`
+            p {
+              color: red
+            }
+          `
+        }
+        
+        render() {
+          return html`
+            <p><slot name="content">I'm a simple web component</slot></p>
+          `
+        }
+      }), 1000)
+    </script>
+  </head>  
+  <body>
+   <simple-wc style="display: none">
+      <slot slot="content">content that should only be shown styled</slot>
+    </simple-wc>
+    <a href="index.html">back</a>
+  </body>
+</html>
