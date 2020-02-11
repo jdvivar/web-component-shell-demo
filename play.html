@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>A minimal & fun Web Component demo</title>
+
+    <script type="module">
+      import { LitElement, html, css } from 'https://unpkg.com/lit-element/lit-element.js?module'
+
+      window.customElements.define('simple-wc', class extends LitElement {
+        static get styles() {
+          return css`
+            p {
+              color: red
+            }
+          `
+        }
+        render() {
+          return html`
+            <p><slot name="content">This is the default content</slot></p>
+          `
+        }
+      })
+    </script>
+  </head>  
+  <body>
+   <simple-wc>
+      <slot slot="content">This should be red when the browser registers the Web Component</slot>
+    </simple-wc>
+  </body>
+</html>

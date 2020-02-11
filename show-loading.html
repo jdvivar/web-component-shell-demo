@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      simple-wc {
+        display: none;
+      }
+    </style>
+
+    <script>
+      function shellSubstitute(tag, shell = "") {
+        // Destructuring makes a copy, therefore exactly the same elements will have their content restored
+        const instances = [...document.querySelectorAll(tag)];
+        const contentMap = instances.map(el => {
+          const originalContent = el.innerHTML
+          el.innerHTML = shell
+          el.style.display = 'inherit'
+          return originalContent
+        });
+        window.customElements.whenDefined(tag).then(() => {
+          instances.forEach((el, i) => (el.innerHTML = contentMap[i]))
+        });
+      }
+    </script>
+
+    <script type="module">
+      import { LitElement, html } from "https://unpkg.com/lit-element/lit-element.js?module"
+
+      const tag = "simple-wc"
+      const shell = `<p>Loading...</p>`
+      shellSubstitute(tag, shell)
+
+      window.setTimeout(() => window.customElements.define(tag, class extends LitElement {
+        render() {
+          return html`
+            <p><slot name="content">default content</slot></p>
+          `;
+      }}) , 1000);
+    </script>
+  </head>
+  <body>
+    <simple-wc>
+      <slot slot="content">content that should only be shown after loading</slot>
+    </simple-wc>
+    <simple-wc>
+      <slot slot="content">more content</slot>
+    </simple-wc>
+    <a href="index.html">back</a>
+  </body>
+</html>
