@@ -17,7 +17,7 @@
         const contentMap = instances.map(el => {
           const originalContent = el.innerHTML
           el.innerHTML = shell
-          el.style.display = 'inherit'
+          el.style.display = 'inline'
           return originalContent
         });
         window.customElements.whenDefined(tag).then(() => {
