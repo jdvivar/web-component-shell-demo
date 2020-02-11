@@ -1,37 +1,10 @@
-Welcome to Glitch
+`web-component-shell-demo`
 =================
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+This is a simple demo project to try out different approaches to load Web Components shells while the actual Web Component gets loaded, parsed and attached to a custom tag.
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+I've created it with simplicity in mind. In this case that means no NPM. The only dependency is LitElement, which I decided to use for the sake of cleaner Web Components definitions, but it's easy to avoid it as well if you find it necessary.
 
-Find out more [about Glitch](https://glitch.com/about).
+## Play
 
-
-Your Project
-------------
-
-### ← README.md
-
-That's this file, where you can tell people what your cool website does and how you built it.
-
-### ← index.html
-
-Where you'll write the content of your website. 
-
-### ← style.css
-
-CSS files add styling rules to your content.
-
-### ← script.js
-
-If you're feeling fancy you can add interactivity to your site with JavaScript.
-
-### ← assets
-
-Drag in `assets`, like images or music, to add them to your project
-
-Made by [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/jdvivar/web-component-shell-demo)
