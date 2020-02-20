@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background: #f6f6f6;
+        font-family: arial, sans-serif;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    </style>
+    <script type="module" src="src/components/my-cat/my-cat.js"></script>
+  </head>
+  <body>
+    <h1>
+      My cats
+    </h1>
+    <my-cat style="display: none">
+      <slot slot="content">content that should only be shown after loading</slot>
+    </my-cat>
+    <my-cat style="display: none">
+      <slot slot="content">content that should only be shown after loading</slot>
+    </my-cat>
+    <a href="index.html">back to index</a>
+  </body>
+</html>

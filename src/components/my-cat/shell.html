@@ -1,0 +1,73 @@
+<style>
+  .card {
+    --color: #eee;
+    border-radius: 6px;
+    background: white;
+    margin: 40px 0;
+    overflow: hidden;
+    height: 480px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, transparent 0%, white 50%, transparent 100%),
+      linear-gradient(var(--color) 100%, transparent 0),
+      linear-gradient(var(--color) 100%, transparent 0),
+      linear-gradient(var(--color) 100%, transparent 0),
+      linear-gradient(var(--color) 100%, transparent 0),
+      linear-gradient(var(--color) 100%, transparent 0),
+      linear-gradient(var(--color) 100%, transparent 0),
+      linear-gradient(var(--color) 100%, transparent 0),
+      linear-gradient(rgba(0,0,255, 0.2) 100%, transparent 0),
+      linear-gradient(white 100%, transparent 0);
+    background-size:
+      200px 100%,
+      100% 187px,
+      70% 30px,
+      260px 15px,
+      260px 15px,
+      260px 15px,
+      260px 15px,
+      260px 15px,
+      100px 40px,
+      100% 100%;
+    background-position:
+      -150%x 0,
+      0 0,
+      20px 217px,
+      20px 280px,
+      20px 305px,
+      20px 330px,
+      20px 355px,
+      20px 380px,
+      20px 420px,
+      0 0;
+    animation: loading 2s infinite;
+  }
+  @keyframes loading {
+    from {
+      background-position:
+        -150% 0,
+        0 0,
+        20px 217px,
+        20px 280px,
+        20px 305px,
+        20px 330px,
+        20px 355px,
+        20px 380px,
+        20px 420px,
+        0 0;
+    }
+    to {
+      background-position:
+        350% 0,
+        0 0,
+        20px 217px,
+        20px 280px,
+        20px 305px,
+        20px 330px,
+        20px 355px,
+        20px 380px,
+        20px 420px,
+        0 0;
+    }
+  }
+</style>
+<div class="card"></div>
