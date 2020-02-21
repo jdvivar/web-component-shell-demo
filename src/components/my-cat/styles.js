@@ -1,9 +1,12 @@
-import { css } from "https://unpkg.com/lit-element/lit-element.js?module";
+import { css } from 'https://unpkg.com/lit-element/lit-element.js?module'
 
 export const styles = css`
          :host {
            --radius: 6px;
          }
+         .card([hidden]) {
+            display: none;
+          }
          .card {
            border-radius: var(--radius);
            background: white;
